@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/normalFragment">
+
+    <fragment
+        android:id="@+id/normalFragment"
+        android:name="com.example.myweather.ui.normal.NormalFragment"
+        tools:layout="@layout/fragment_normal"
+        android:label="NormalFragment" />
+    <fragment
+        android:id="@+id/elderFragment"
+        android:name="com.example.myweather.ui.elder.ElderFragment"
+        android:label="fragment_elder"
+        tools:layout="@layout/fragment_elder" />
+</navigation>
