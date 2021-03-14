@@ -16,7 +16,7 @@
 
 
         <ImageView
-            android:id="@+id/normalSearchButton"
+            android:id="@+id/elderSearchButton"
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:background="@color/lime"
@@ -24,7 +24,7 @@
             app:srcCompat="@drawable/ic_search" />
 
         <EditText
-            android:id="@+id/normalCityInput"
+            android:id="@+id/elderCityInput"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -36,7 +36,7 @@
             android:textSize="50dp" />
 
         <ImageView
-            android:id="@+id/normalAccessibilityButton"
+            android:id="@+id/elderAccessibilityButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@color/orange"
@@ -69,6 +69,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
             <TextView
+                android:id="@+id/elderTemperatureDisplay"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,6 +107,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
             <TextView
+                android:id="@+id/elderDescriptionDisplay"
                 android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -151,6 +153,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
             <TextView
+                android:id="@+id/elderPressureDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1024hPa"
@@ -194,6 +197,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
             <TextView
+                android:id="@+id/elderDawnDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="07:00"
@@ -238,6 +242,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
             <TextView
+                android:id="@+id/elderDuskDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="23:00"

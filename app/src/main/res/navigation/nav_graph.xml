@@ -9,10 +9,18 @@
         android:id="@+id/normalFragment"
         android:name="com.example.myweather.ui.normal.NormalFragment"
         tools:layout="@layout/fragment_normal"
-        android:label="NormalFragment" />
+        android:label="NormalFragment" >
+        <action
+            android:id="@+id/action_normalFragment_to_elderFragment"
+            app:destination="@id/elderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/elderFragment"
         android:name="com.example.myweather.ui.elder.ElderFragment"
         android:label="fragment_elder"
-        tools:layout="@layout/fragment_elder" />
+        tools:layout="@layout/fragment_elder" >
+        <action
+            android:id="@+id/action_elderFragment_to_normalFragment"
+            app:destination="@id/normalFragment" />
+    </fragment>
 </navigation>
