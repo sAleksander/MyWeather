@@ -12,15 +12,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/darkGrey"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/normalSearchButton"
             android:layout_width="50dp"
             android:layout_height="80dp"
+            android:elevation="10dp"
             android:background="@color/grey"
             app:srcCompat="@drawable/ic_search" />
 
@@ -33,12 +35,13 @@
             android:inputType="textPersonName"
             android:text="Warsaw"
             android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:textSize="40dp" />
 
         <ImageView
             android:id="@+id/normalAccessibilityButton"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:elevation="10dp"
             android:background="@color/orange"
             app:srcCompat="@drawable/ic_human_wheelchair" />
     </LinearLayout>

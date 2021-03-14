@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import androidx.navigation.fragment.findNavController
 import com.example.myweather.R
 
 class NormalFragment : Fragment() {

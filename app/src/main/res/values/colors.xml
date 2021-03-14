@@ -11,4 +11,7 @@
     <color name="darkGreen">#003300</color>
     <color name="darkGrey">#262626</color>
     <color name="grey">#333333</color>
+    <color name="lightBlue">#66d9ff</color>
+    <color name="lime">#2db300</color>
+    <color name="lightGrey">#e6e6e6</color>
 </resources>
