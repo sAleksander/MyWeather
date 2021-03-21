@@ -11,15 +11,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.myweather.R
+import com.example.myweather.ui.MainViewModel
 
 class NormalFragment : Fragment() {
-    private lateinit var normalViewModel: NormalViewModel
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        normalViewModel = ViewModelProvider(this).get(NormalViewModel::class.java)
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_normal, container, false)
         val searchButton: ImageView = root.findViewById(R.id.normalSearchButton)
         val cityInput: TextView = root.findViewById(R.id.normalCityInput)
@@ -38,25 +39,25 @@ class NormalFragment : Fragment() {
             view.findNavController().navigate(R.id.action_normalFragment_to_elderFragment)
         }
 
-        normalViewModel.Pressure.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Pressure.observe(viewLifecycleOwner, Observer {
             pressureDisplay.text = "${it.toString()}hPa"
         })
-        normalViewModel.Temperature.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Temperature.observe(viewLifecycleOwner, Observer {
             temperatureDisplay.text = "${it.toString()}°"
         })
-        normalViewModel.Description.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Description.observe(viewLifecycleOwner, Observer {
             descriptionDisplay.text = it.toString()
         })
-        normalViewModel.Dawn.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Dawn.observe(viewLifecycleOwner, Observer {
             dawnDisplay.text = it.toString()
         })
-        normalViewModel.Dusk.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Dusk.observe(viewLifecycleOwner, Observer {
             duskDisplay.text = it.toString()
         })
-        normalViewModel.Date.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Date.observe(viewLifecycleOwner, Observer {
             dateDisplay.text = it
         })
-        normalViewModel.Visualisation.observe(viewLifecycleOwner, Observer {
+        mainViewModel.Visualisation.observe(viewLifecycleOwner, Observer {
             when (it) {
                 "01" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_clear_sky)
                 "02" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_few_clouds)
@@ -72,7 +73,7 @@ class NormalFragment : Fragment() {
             }
         })
         searchButton.setOnClickListener {
-                normalViewModel.getForecast(cityInput.text.toString())
+                mainViewModel.getForecast(cityInput.text.toString())
         }
 
         return root
