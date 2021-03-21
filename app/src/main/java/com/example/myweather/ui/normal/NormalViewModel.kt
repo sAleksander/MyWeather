@@ -30,12 +30,24 @@ class NormalViewModel: ViewModel() {
 
     fun getForecast(city:String = "Warsaw"){
         viewModelScope.launch {
+            try {
             val response = OpenWeatherApi.API.getCurrentWeather(city).await()
             _pressure.value = response.main.pressure.toString()
             _temperature.value = ResponseAdjuster.KelvinToCelsius(response.main.temp).toString()
             _description.value = response.weather[0].description
             _dawn.value = ResponseAdjuster.TimeFromNumber(response.sys.sunrise.toLong())
             _dusk.value = ResponseAdjuster.TimeFromNumber(response.sys.sunset.toLong())
+            _visualisation.value = ResponseAdjuster.getIcon(response.weather[0].icon)
+            } catch (t: Throwable){
+                val errorAmount = "NaN!"
+                val errorMessage = "No data!"
+                _pressure.value = errorAmount
+                _temperature.value = errorAmount
+                _description.value = errorMessage
+                _dawn.value = errorAmount
+                _dusk.value = errorAmount
+                _visualisation.value = "404"
+            }
         }
     }
 

@@ -101,7 +101,7 @@
                 android:layout_width="95dp"
                 android:layout_height="95dp"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_weather_lightning_rainy_black" />
+                app:srcCompat="@drawable/ic_weather_thunderstorm_black" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -183,7 +183,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                app:srcCompat="@drawable/ic_sun_black" />
+                app:srcCompat="@drawable/ic_weather_clear_sky_black" />
 
             <TextView
                 android:layout_width="wrap_content"

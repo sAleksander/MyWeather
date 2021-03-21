@@ -56,7 +56,24 @@ class NormalFragment : Fragment() {
         normalViewModel.Date.observe(viewLifecycleOwner, Observer {
             dateDisplay.text = it
         })
-
+        normalViewModel.Visualisation.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                "01" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_clear_sky)
+                "02" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_few_clouds)
+                "03" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_scattered_clouds)
+                "04" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_broken_clouds)
+                "09" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_shower_rain)
+                "10" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_rain)
+                "11" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_thunderstorm)
+                "13" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_snow)
+                "50" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_mist)
+                "404" -> visualisationDisplay.setImageResource(R.drawable.ic_weather_attention)
+                else -> visualisationDisplay.setImageResource(0)
+            }
+        })
+        searchButton.setOnClickListener {
+                normalViewModel.getForecast(cityInput.text.toString())
+        }
 
         return root
     }

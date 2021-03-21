@@ -82,7 +82,7 @@
             android:id="@+id/normalVisualisationDisplay"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/ic_weather_lightning_rainy" />
+            app:srcCompat="@drawable/ic_weather_thunderstorm" />
     </LinearLayout>
 
     <TextView
@@ -118,7 +118,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                app:srcCompat="@drawable/ic_sun" />
+                app:srcCompat="@drawable/ic_weather_clear_sky" />
 
             <TextView
                 android:id="@+id/normalDawnDisplay"

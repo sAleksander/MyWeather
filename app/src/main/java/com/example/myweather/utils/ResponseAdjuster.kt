@@ -7,7 +7,7 @@ object ResponseAdjuster {
         return Math.round((degree-(273.15))*10.0)/10.0
     }
     fun TimeFromNumber(number:Long):String{
-        return Time(number).toString()
+        return Time(number*1000).toString()
     }
     fun getIcon(rawIcon:String):String{
         return rawIcon.substring(0,2)
